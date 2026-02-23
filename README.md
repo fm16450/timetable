@@ -1,2 +1,2 @@
-# timetable
+# Timetable
 Timesheet management system
