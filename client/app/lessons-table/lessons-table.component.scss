@@ -1,0 +1,110 @@
+table {
+    columns: 10%;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+
+.demo-table {
+    width: 100%;
+  }
+  
+  .mat-mdc-row .mat-mdc-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+  }
+  h4{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .t{
+    display: flex;
+    margin: 5px;
+    gap: 0;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+    h1 {
+      font-size: 24px;
+    }
+  }
+  button {
+  
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 20%;
+    
+    padding: 12px;
+    display: flex;
+
+    border:solid 2px black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: solid 2px black;
+  }
+  input{
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 150px;
+    padding: 12px;
+    border:solid 2px black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: solid 2px black;
+  }
+  
+  .mat-mdc-row:hover .mat-mdc-cell {
+    border-color: currentColor;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+  h1{
+    text-align: center;
+    color: #03a9bf;
+  }
+section {
+  display: flex;
+  align-items: center;
+}
+
+.example-label {
+  font-size: 14px;
+  margin: 0 16px 0 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}

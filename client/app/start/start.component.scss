@@ -1,0 +1,131 @@
+@import "../../styles/colors.scss";
+
+img {
+    width: 35px;
+    height: 35px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: large;
+}
+
+li button {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: large;
+}
+
+li a:hover {
+    background-color: white;
+    color: black;
+}
+
+li button:hover {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    background-size: cover;
+    /* או background-size: contain */
+    height: 100%;
+}
+
+.relative {
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    // background-color: rgba(0, 0, 0, 0.5);
+    /* צבע שקוף כבדי */
+    padding: 20px;
+    // color: white;
+    text-align: center;
+}
+
+:host {
+
+    .name {
+        transition: all linear 0.5s;
+        // background-color: lightblue;
+        height: 100px;
+        width: 500px;
+        position: relative;
+        color: $colorRed;
+        font-family: Guttman Yad-Brush;
+        animation: example 5s linear 2s infinite alternate;
+    }
+    @keyframes example {
+        0%   {color:red; left:0px; top:0px;font-size: 30px;}
+        25%  {color:yellow; left:50%; top:0px; font-size: 40px;}
+        50%  {color:blue;right:0%; top:150px;font-size: 50px;}
+        75%  {color:green; left:0px; top:150px;font-size: 60px;}
+        100% {color:red; left:0px; top:0px;font-size: 70px;}
+      }
+
+    .q {
+        background-color: $colorPink;
+        border: 2px solid $colorGray;
+        width: 100px;
+        height: 50px;
+        grid-area:auto;
+        align-items: flex-start;
+    }
+    .grid-container {
+        display: grid;
+        padding: 0%;
+        grid-template-columns: 10% 80ch 10%;
+        text-align: end;
+        gap: 10px;
+        padding: 100px;
+      }
+      
+      .grid-container > div {
+        color:red;
+        font-weight: bold;
+        position: relative;
+        animation: mymove 5s;
+        animation-fill-mode: forwards;
+      }
+      .item1 {
+        animation-timing-function: ease-in;
+        color:$colorRed;
+        font-size: 50px;
+        grid-column: 1/1;
+        padding:10px;
+        
+      }
+      .item2 {
+        top: 0;
+        animation-timing-function: ease;
+        grid-column: 2/3;
+        padding:10px;
+        color:$colorRed;
+        font-size:50px;
+      }
+      .item3 {
+        animation-timing-function: linear;
+        grid-column:1/3;
+        padding:10px;
+        height:500px;
+        color:$colorRed
+      }
+  
+      @keyframes mymove {
+        from {left: 0px;}
+        to {left: 300px;}
+      }
+    }

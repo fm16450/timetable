@@ -1,0 +1,37 @@
+<!-- <div class="box">
+    <p></p>
+    <div class="form-container" [ngStyle]="{
+      'background-image': 'url(' + backgroundImage + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': 'cover',
+      'background-position': 'center center',
+         }">
+      <form [formGroup]="formGroup">
+  
+       
+  
+  
+
+
+
+        <div>
+          <p>
+          <mat-form-field>
+            <mat-label>מקצוע</mat-label>
+            <mat-select [formControl]="subject">
+              @for (subject of this.subjects; track subject; let i = $index){
+              <mat-option [value]="'subject'">{{subject}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          </p>
+         
+        </div>
+        
+        <button [ngStyle]="{'width': '10rem'}" (click)="addSubject()">הוסף מקצוע</button>
+        <section>
+          <button (click)="save()" matButton="elevated" >עדכון</button>
+        </section>
+      </form>
+    </div>
+  </div> -->

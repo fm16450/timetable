@@ -1,0 +1,49 @@
+<!-- <p>lessons-table works!</p> -->
+
+<table dir="rtl">
+
+    <thead>
+
+        <tr>
+            <th>ראשון</th>
+            <th>שני</th>
+            <th>שלישי</th>
+            <th>רביעי</th>
+            <th>חמישי</th>
+            <th>שישי</th>
+            
+            
+        </tr>
+    </thead>
+<tbody>
+@for(h of hours;track h;let i = $index){
+    <tr>
+    @for(d of days;track d;let j = $index){
+
+        <td>{{this.sorted_lessons[i][j].subject}} - {{this.sorted_lessons[i][j].teacher}} </td>
+
+    }
+</tr>
+<tr>
+    <!-- <td>{{lesson.subject}} - {{lesson.teacher}}</td> -->
+    <!-- <td>{{teacher.firstname}} {{teacher.lastname}}</td>
+    <td>{{teacher.tel}} </td>
+    <td>{{teacher.id}} </td>
+    <td>{{teacher.email}} </td>
+    <td>{{teacher.amount_of_hours}} </td>
+    @if(teacher.is_tutor){
+        <td>{{this.classes[teacher.class]}}'{{teacher.number_of_class}}</td>
+    }
+    @if(!teacher.is_tutor){
+        <td></td>
+    } -->
+    <!-- <button (click)="editTeacher(teacher, i)">ערוך</button> -->
+    <!-- <button (click)="deleteTeacher(teacher.id, i)">מחק</button> -->
+    <!-- <button (click)="editSubjectsToTeacher(teacher, i)">מקצועות</button> -->
+
+</tr>
+}
+
+</tbody>
+</table>
+<!-- <button (click)="addTeacher()">➕ </button> -->

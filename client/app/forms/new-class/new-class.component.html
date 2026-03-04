@@ -1,0 +1,42 @@
+<div class="box">
+    <p></p>
+    <div class="form-container" [ngStyle]="{
+      'background-image': 'url(' + backgroundImage + ')',
+      'background-repeat': 'no-repeat',
+      'background-size': 'cover',
+      'background-position': 'center center',
+         }">
+        <form [formGroup]="formGroup">
+
+         
+            <mat-form-field class="half">
+                <mat-label>שכבה</mat-label>
+                <mat-select formControlName="grade">
+                    @for (class of classes; track class; let i = $index){
+                    <mat-option [value]="i+1">{{class}}</mat-option>
+                    }
+
+                </mat-select>
+                <mat-icon matSuffix>123</mat-icon>
+            </mat-form-field>
+            <div></div>
+            <mat-form-field appearance="fill">
+                <mat-label>מספר כיתה</mat-label>
+                <input matInput placeholder="" formControlName="number_of_class" type="number">
+                <mat-icon matSuffix>123</mat-icon>
+
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>מחנכת</mat-label>
+              <input matInput placeholder="" formControlName="tutor_of_class" type="string">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>מקסימום שיעורים ביום</mat-label>
+              <input matInput placeholder="" formControlName="max_on_day" type="number">
+            </mat-form-field>
+            <section>
+                <button (click)="save()" matButton="elevated">עדכון</button>
+            </section>
+        </form>
+    </div>
+</div>

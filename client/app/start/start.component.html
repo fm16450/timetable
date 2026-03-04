@@ -1,0 +1,20 @@
+
+<app-navbar>
+        <li><button (click)="openDialog()">כניסה למערכת</button></li>
+</app-navbar>
+    <div [innerText]="name" class="name"></div>
+    <div class="grid-container">
+        <div class="item1"  [innerText]="massage1" ></div>
+        <div class="item2" [innerText]="massage2" ></div>
+        <div class="item3">
+        <mat-grid-list cols="6" rowHeight="4:3">
+                @for(item of arr;track item)
+                {
+                <mat-grid-tile>
+                    @if(item===1 ){
+                    <p class="q" ></p>
+                    }
+                </mat-grid-tile>
+                }
+            </mat-grid-list>
+        </div>
