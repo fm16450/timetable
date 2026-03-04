@@ -139,3 +139,4 @@ ng serve
 ## Project Goal
 
 To develop an intelligent timetable scheduling system based on constraint solving and optimization techniques, using a clean layered architecture and fullstack implementation.
+

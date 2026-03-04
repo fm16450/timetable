@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\project",
+    "\\project\\python_solver",
+    "\\project\\python_solver\\api",
+    "\\project\\python_solver\\database",
+    "\\project\\python_solver\\models"
+  ],
+  "SelectedNode": "\\project\\python_solver\\database\\repository.py",
+  "PreviewInSolutionExplorer": false
+}
