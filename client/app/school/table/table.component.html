@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        @for(item of columnsName;track item){
+            <td [innerText]="item"></td>
+        }
+    </tr>
+    @for(item of dataSource;track item;){
+    <tr></tr>
+    @for(subject of item.subjects; track subject){
+        <td [innerText]="subject"></td>
+    }
+    <td class="position" [innerText]="item.position"></td>
+}
+         <!-- @for(subjects of dataSourcet ;track subjects ){
+                <th [innerText]="subject"></th>
+            
+        }  -->
+        <!-- <th [innerText]="dataSource[position]"></th> -->  
+    
+  </table>

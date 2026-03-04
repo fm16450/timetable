@@ -1,0 +1,22 @@
+.button {
+  height: 100%;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: large;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; // Adjusts spacing between buttons
+  align-items: center; // Vertically centers buttons
+}

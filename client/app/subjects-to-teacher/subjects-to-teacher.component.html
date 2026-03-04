@@ -1,0 +1,55 @@
+
+<table>
+    <tr>
+        <th>{{this.data.editedTeacher.firstname}} {{this.data.editedTeacher.lastname}}
+        </th>
+    </tr>
+</table>
+<div class="box">
+    <p></p>
+  
+
+  <table>
+    <thead>
+        
+        <tr>
+            <th>מקצוע</th>
+            <th>כיתה</th>
+            <!-- <th>מספר זהות</th>
+            <th>כתובת אימייל</th>
+            <th>כמות שעות</th>
+            <th>כיתת חינוך</th> -->
+            
+            
+        </tr>
+    </thead>
+<tbody>
+@for(s of this.subjectsToTeachers;track s;let i = $index){
+<tr>
+
+
+    @if(this.data.editedTeacher.id===s.teacherId){
+    
+    <td>{{s.subject}}</td>
+    <td>{{this.classes[s.class-1]}} </td>
+    <button (click)="deleteSubjectToTeacher(i)">מחק</button>
+}
+    <!-- <td>{{teacher.id}} </td>
+    <td>{{teacher.email}} </td>
+    <td>{{teacher.amount_of_hours}} </td>
+    @if(teacher.is_tutor){
+        <td>{{this.classes[teacher.class]}}'{{teacher.number_of_class}}</td>
+    }
+    @if(!teacher.is_tutor){
+        <td></td>
+    }
+    <button (click)="editTeacher(teacher, i)">ערוך</button>
+    
+    <button (click)="editSubjectsToTeacher(teacher, i)">מקצועות</button> -->
+
+</tr>
+}
+
+</tbody>
+</table>
+<button (click)="addSubjectToTeacher()">➕ </button>

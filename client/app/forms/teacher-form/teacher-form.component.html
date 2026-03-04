@@ -1,0 +1,21 @@
+
+<div class="freeday">
+<div [innerText]="'בחירת יום חופשי'"></div>
+
+<mat-form-field>
+  <mat-label [innerText]="'יום חופשי'"></mat-label>
+  <mat-select [formControl]="freeday" multiple>
+    <mat-select-trigger>
+      {{freeday.value?.[0] || ''}}
+      @if ((freeday.value?.length || 0) > 1) {
+        <span class="example-additional-selection">
+          (+{{(freeday.value?.length || 0) - 1}} {{freeday.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+      }
+    </mat-select-trigger>
+    @for (day of dayList; track day) {
+  <mat-option [value]="day" [innerText]="day"></mat-option>
+}
+  </mat-select>
+</mat-form-field>
+</div>

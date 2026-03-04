@@ -1,0 +1,40 @@
+<app-navbar>
+    <li><button [innerText]="'יציאה'"  class="button" (click)="exit()"></button></li>
+</app-navbar>
+
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th>שם</th>
+            <th>טלפון</th>
+            <th>מספר זהות</th>
+            <th>כתובת אימייל</th>
+            <th>כמות שעות</th>
+            <th>כיתת חינוך</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(teacher of teachers;track teacher;let i = $index){
+        <tr>
+            <td>{{teacher.firstname}} {{teacher.lastname}}</td>
+            <td>{{teacher.tel}} </td>
+            <td>{{teacher.id}} </td>
+            <td>{{teacher.email}} </td>
+            <td>{{teacher.amount_of_hours}} </td>
+            @if(teacher.is_tutor){
+            <td>{{this.classes[teacher.class]}}'{{teacher.number_of_class}}</td>
+            }
+            @if(!teacher.is_tutor){
+            <td></td>
+            }
+            <button (click)="editTeacher(teacher, i)">ערוך</button>
+            <button (click)="deleteTeacher(teacher.id, i, teacher)">מחק</button>
+            <button (click)="editSubjectsToTeacher(teacher, i)">מקצועות</button>
+            <!-- <button (click)="openLessons(teacher, i)">מערכת</button> -->
+        </tr>
+        }
+    </tbody>
+</table>
+<button (click)="addTeacher()">➕ </button>

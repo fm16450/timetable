@@ -1,0 +1,24 @@
+
+
+    <div class="form-container"  [ngStyle]="{
+        'background-repeat': 'no-repeat',
+        'background-size': 'cover',
+        'background-position': 'center center',
+           }" >
+           <form  [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <div class="form-group">
+                <button 
+                (click)="addSubject()">➕</button> 
+                <label class="formLabel">רשימת מקצועות</label>
+                <div *ngFor="let control of subList.controls; index as i">
+                  <input [formControl]="control" placeholder="מקצוע"/>
+                  <input type="number" [formControl]="control" placeholder="מספר שיעורים בשבוע"/>
+                  <button (click)="removeSubject(i)">🚮</button>  
+                </div>
+            </div>
+              </div>
+              <button type="submit">Submit</button>
+           </form>
+        </div>
+

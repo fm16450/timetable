@@ -1,0 +1,161 @@
+<div class="box">
+  <form>
+
+  <div class="form-container" [ngStyle]="{
+    'background-image': 'url(' + backgroundImage + ')',
+    'background-repeat': 'no-repeat',
+    'background-size': 'cover',
+    'background-position': 'center center',
+       }">
+    <form [formGroup]="formGroup">
+
+      <!-- <p> -->
+        <mat-form-field appearance="fill">
+          <mat-label>שם פרטי</mat-label>
+          <input matInput placeholder="" formControlName="firstname">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      <!-- </p> -->
+
+      <!-- <p> -->
+        <mat-form-field appearance="fill">
+          <mat-label>שם משפחה</mat-label>
+          <input matInput placeholder="" formControlName="lastname">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      <!-- </p> -->
+
+      <!-- <p> -->
+        <mat-form-field appearance="fill">
+          <mat-label>טלפון נייד</mat-label>
+          <input matInput placeholder="0500000000" formControlName="tel">
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      <!-- </p> -->
+
+      <div class="example-container">
+        <mat-form-field>
+          <mat-label>כתובת אימייל</mat-label>
+          <input matInput placeholder="myemail@example.com" [formControl]="email" (blur)="updateErrorMessage()" />
+          <mat-icon matSuffix>email</mat-icon>
+          @if (email.invalid) {
+          <mat-error>{{errorMessage()}}</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <!-- <p> -->
+        <mat-form-field appearance="fill">
+          <mat-label>מספר זהות</mat-label>
+          <input matInput placeholder="123456789" formControlName="id">
+          <mat-icon matSuffix>badge</mat-icon>
+          <mat-hint> בן 9 ספרות</mat-hint>
+        </mat-form-field>
+      <!-- </p> -->
+
+      <mat-form-field>
+        <mat-label>תפקיד</mat-label>
+        <mat-select formControlName="is_tutor">
+          <mat-option value="true" (click)="open_the_class()">מחנכת</mat-option>
+          <mat-option value="false" (click)="close_the_class()">מורה מקצועית</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>123</mat-icon>
+      </mat-form-field>
+
+      @if(tutor){
+      <mat-form-field class="half">
+        <mat-label>כיתת חינוך</mat-label>
+        <mat-select formControlName="class">
+          @for (class of classes; track class; let i = $index){
+          <mat-option [value]="i+1">{{class}}</mat-option>
+          }
+
+        </mat-select>
+        <mat-icon matSuffix>123</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>מספר כיתה</mat-label>
+        <input matInput placeholder="" formControlName="number_of_class" type="number">
+        <mat-icon matSuffix>123</mat-icon>
+
+      </mat-form-field>
+      }
+
+      <!-- <p> -->
+        <mat-form-field appearance="fill">
+          <mat-label>כמות שעות</mat-label>
+          <input matInput placeholder="" formControlName="amount_of_hours">
+          <mat-icon matSuffix>123</mat-icon>
+          <mat-hint></mat-hint>
+        </mat-form-field>
+      <!-- </p> -->
+
+
+
+      <!-- @for(control of subjectsList.controls; track control;let ii = $index){
+      <div>
+
+        
+          
+            <mat-label>יום חופשי</mat-label>
+            <mat-select [formControl]="dayesList.controls[ii]" multiple>
+                @if(countDay > 3){
+                <span [innerText]="'מוגבל לשתי ימים'"></span> } -->
+          <!-- <p>    -->
+                <!-- <mat-form-field>     
+             
+      <mat-select-trigger>
+        @for(day of dayesList.controls[ii].value;let ii = $index; track day){
+        <span class="example-additional-selection" [innerText]="day"></span>
+        }
+      </mat-select-trigger>
+      @for (day of dayes; track day) {
+      <mat-option [value]="day" [innerText]="day"></mat-option>
+      }
+       </mat-select> 
+      <mat-icon fontIcon="home"></mat-icon>
+      </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <mat-label>מקצוע</mat-label>
+          <mat-select [formControl]="subjectsList.controls[ii]">
+            @for (subject of subjects; track subject; let i = $index){
+            <mat-option [value]="subject">{{subject}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <mat-label>כיתות</mat-label>
+          <mat-select [formControl]="classesList.controls[ii]" multiple>
+            <mat-select-trigger>
+              איך רושמים][ii]
+              @for(top of classesList.controls[ii].value; track top){
+              <span class="example-additional-selection">
+                {{top}}
+              </span>
+              }
+            </mat-select-trigger>
+            @for (topping of classes; track topping) {
+            <mat-option [value]="topping">{{topping}}</mat-option>
+            }
+          </mat-select>
+          <mat-icon matSuffix>123</mat-icon>
+        </mat-form-field>
+      </p>
+  </div>
+  }
+  <button [ngStyle]="{'width': '10rem'}" (click)="addSubject()">הוסף מקצוע</button>  -->
+  <section>
+    <button (click)="save()" matButton="elevated">עדכון</button>
+  </section>
+<!-- </div> -->
+</form>  
+</div>

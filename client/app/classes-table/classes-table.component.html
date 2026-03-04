@@ -1,0 +1,29 @@
+
+
+<app-navbar>
+  <li><button [innerText]="'יציאה'"  class="button" (click)="exit()"></button></li>
+</app-navbar>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>כיתה</th>
+      <th>מחנכת</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(class of classes;track class;let i = $index){
+    <tr>
+      <td> {{this.names_of_classes[class.grade]}}' {{class.number_of_class}}</td>
+      <td>{{class.tutor}} </td>
+      <button (click)="deleteClass(class.id, i, class)">מחק</button>
+      <button (click)="update()">עדכון שיעורים</button>
+      <!-- <button (click)="openTableByClass(class.id, i)">מערכת</button> -->
+    </tr>
+    }
+
+  </tbody>
+</table>
+<button (click)="addClass()">➕ </button>

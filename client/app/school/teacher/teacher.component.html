@@ -1,0 +1,20 @@
+
+
+<app-navbar>
+  <li>
+      <button [innerText]="'חזרה'" class="button" (click)="exit()"></button>
+    </li>
+    <li>
+      <button [innerText]="'אילוצי מורה'" class="button" (click)="formTeacher()"></button>
+    </li>
+      <li>
+        <div [innerText]="message" class="message"></div>
+      </li>
+</app-navbar>
+
+
+
+
+<section class="route">
+    <router-outlet></router-outlet>
+  </section>
